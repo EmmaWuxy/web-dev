@@ -58,6 +58,10 @@ a {
     height: 50vh;  /*adjust according to the viewboard height*/
 }
 
+.cover {
+    width: 30rem;
+}
+
 /* GRID */
 .grid-wrapper {
     display: grid;
