@@ -1,11 +1,16 @@
+/* Clear the CSS margin the bro wser orginally set up */
+body {
+    margin: auto 0; 
+}
+
 .zone {
-    padding:30px 50px;
-    margin:40px 60px;
+    /* padding:30px 50px;
+    margin:0px 0px; */
     cursor:pointer;
-    display:inline-block;
+    /* display:inline-block; */
     color:#FFF;
     font-size:2em;
-    border-radius:4px;
+    border-radius:0px;
     border:1px solid #bbb;
     transition: all 0.3s linear;
 }
@@ -15,6 +20,42 @@
     -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
     box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+/* NAV */
+.main-nav {
+    display: flex;
+    list-style: none;
+    font-size: 0.7em;
+    margin: 0;
+}
+
+@media only screen and (max-width: 600px){
+    .main-nav {
+        font-size: 0.4em;
+        padding: 0;
+    }
+}
+
+.push {
+    margin-left: auto;
+}
+
+li {
+    padding: 20px;
+}
+
+a {
+    color: #f5f5f6;
+    text-decoration: none;
+}
+
+/* COVER */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;  /*adjust according to the viewboard height*/
 }
 
 /*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
@@ -69,3 +110,4 @@
     background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
     background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
 }
+
