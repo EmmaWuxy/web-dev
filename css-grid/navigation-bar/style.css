@@ -1,6 +1,7 @@
 /* Clear the CSS margin the bro wser orginally set up */
 body {
     margin: auto 0; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .zone {
