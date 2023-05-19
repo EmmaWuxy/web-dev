@@ -2,6 +2,14 @@ let database = [
     {
         username: 'Emma',
         password: '12345',
+    },
+    {
+        username: 'Alex',
+        password: 'aaaa',
+    },
+    {
+        username: 'Emma',
+        password: '3434',
     }
 ];
 
@@ -23,8 +31,17 @@ let newsfeed = [
 let userNamePrompt = prompt("What's your username?");
 let passwordPrompt = prompt("What's your password?");
 
-function signIn(user, pass){
-    if (user === database[0].username && pass === database[0].password){
+function isUserValid(username, password){
+    for (let i=0; i<database.length; i++){
+        if(database[i].username === username && database[i].password === password ){
+            return true;
+        }
+    }
+    return false;
+}
+
+function signIn(username, password){
+    if (isUserValid(username, password)){
         console.log(newsfeed);
     }
     else{
