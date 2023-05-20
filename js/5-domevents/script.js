@@ -1,6 +1,7 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
+var dltButtoms = document.querySelectorAll("dltBtn");
 
 function inputLength() {
 	return input.value.length;
@@ -11,6 +12,7 @@ function createListElement() {
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
 	input.value = "";
+	// TODO: Add delete buttom for each newly created element
 }
 
 function addListAfterClick() {
@@ -25,14 +27,32 @@ function addListAfterKeypress(event) {
 	}
 }
 
-function toggleDone(event){	
-	var li = event.target;
-	console.log(li);
-	li.classList.toggle("done");
+
+function toggleDone(target){
+	if (target.matches(".item")){
+		// console.log(target);
+		target.classList.toggle("done");
+	}	
+}
+
+function deleteListElement(target){
+	if (target.matches(".dltBtn")){
+		// console.log(target);
+		// console.log(target.parentElement);
+		target.parentElement.remove();
+	}
+}
+
+function listElementHandler(event){
+	var target = event.target
+	// If clicks on the text, toggle done
+	toggleDone(target);
+	// If clicks on the buttom, delete
+	deleteListElement(target);
 }
 
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-ul.addEventListener("click", toggleDone);
+ul.addEventListener("click", listElementHandler);
