@@ -12,7 +12,13 @@ function createListElement() {
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
 	input.value = "";
-	// TODO: Add delete buttom for each newly created element
+
+	// Add delete buttom for each newly created element
+	var btn = document.createElement("button");
+	btn.setAttribute("class", "dltBtn");
+	btn.textContent = 'Delete';
+	li.appendChild(btn);
+
 }
 
 function addListAfterClick() {
