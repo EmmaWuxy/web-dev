@@ -22,3 +22,7 @@
   text-decoration-line: line-through;
   color: red;
 }
+
+.btn{
+  display: inline-block;
+}
